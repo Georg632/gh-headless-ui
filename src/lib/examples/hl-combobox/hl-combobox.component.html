@@ -1,0 +1,22 @@
+<div
+  hlCombobox
+  class="shadomax-w-sm relative mt-1 w-56 rounded-md"
+  [(selection)]="selectedOption">
+  <input
+    hlComboboxInput
+    [value]="selectedOption.label"
+    class="block w-full rounded-md border-2 border-gray-500 ring-gray-500 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+  <div
+    *hlComboboxOverlay
+    class="absolute right-0 z-10 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+    <ul class="gap-2 py-2">
+      <ng-container *ngFor="let option of options">
+        <li
+          *hlComboboxOption="option"
+          class="p-2 active:bg-gray-100 selected:bg-indigo-100">
+          {{ option.label }}
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</div>
