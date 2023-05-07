@@ -50,9 +50,12 @@ export class HlComboboxOptionDirective<T> implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    const view: EmbeddedViewRef<T> = this.viewContainer.createEmbeddedView(this.templateRef, {
-      $implicit: this.option,
-    });
+    const view: EmbeddedViewRef<T> = this.viewContainer.createEmbeddedView(
+      this.templateRef,
+      {
+        $implicit: this.option,
+      }
+    );
     this.element = view.rootNodes[0];
     this.applyHostlisteners(this.element);
 
