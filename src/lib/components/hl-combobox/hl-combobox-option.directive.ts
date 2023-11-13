@@ -46,7 +46,7 @@ export class HlComboboxOptionDirective<T> implements OnInit, OnDestroy {
     private renderer: Renderer2,
     private combobox: HlComboboxDirective<T>,
     private viewContainer: ViewContainerRef,
-    private templateRef: TemplateRef<any>
+    private templateRef: TemplateRef<any>,
   ) {}
 
   ngOnInit(): void {
@@ -54,7 +54,7 @@ export class HlComboboxOptionDirective<T> implements OnInit, OnDestroy {
       this.templateRef,
       {
         $implicit: this.option,
-      }
+      },
     );
     this.element = view.rootNodes[0];
     this.applyHostlisteners(this.element);

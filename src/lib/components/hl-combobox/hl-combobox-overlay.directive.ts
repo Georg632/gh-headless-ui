@@ -8,7 +8,7 @@ export class HlComboboxOverlayDirective<T> {
   constructor(
     private combobox: HlComboboxDirective<T>,
     private viewContainer: ViewContainerRef,
-    private templateRef: TemplateRef<any>
+    private templateRef: TemplateRef<any>,
   ) {
     combobox.overlay = this;
   }

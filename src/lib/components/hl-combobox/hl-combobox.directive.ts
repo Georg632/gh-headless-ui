@@ -1,4 +1,11 @@
-import { Directive, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import {
+  Directive,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { HlComboboxInputDirective } from './hl-combobox-input.directive';
 import { HlComboboxOptionDirective } from './hl-combobox-option.directive';
 import { HlComboboxOverlayDirective } from './hl-combobox-overlay.directive';
@@ -28,7 +35,7 @@ export class HlComboboxDirective<T> implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     const selChange = changes['selection']?.currentValue;
     if (selChange) {
-      const option = this.options.find(o => o.option == selChange);
+      const option = this.options.find((o) => o.option == selChange);
       if (option) option.isSelected = true;
     }
   }
@@ -54,17 +61,17 @@ export class HlComboboxDirective<T> implements OnChanges {
 
   destroyOption(optionDirective: HlComboboxOptionDirective<T>) {
     this.options.splice(
-      this.options.findIndex(o => o == optionDirective),
-      1
+      this.options.findIndex((o) => o == optionDirective),
+      1,
     );
   }
 
   // select api
   selectActiveOption() {
-    const currentActive = this.options.find(o => o.isActive);
+    const currentActive = this.options.find((o) => o.isActive);
     if (!currentActive) return;
 
-    this.options.forEach(o => (o.isSelected = false));
+    this.options.forEach((o) => (o.isSelected = false));
     currentActive.isSelected = true;
     this.selectionChange.emit(currentActive.option);
     this.collapse();
@@ -72,7 +79,7 @@ export class HlComboboxDirective<T> implements OnChanges {
 
   // active api
   setNextItemActive() {
-    const currentActive = this.options.findIndex(o => o.isActive);
+    const currentActive = this.options.findIndex((o) => o.isActive);
 
     let nextItem: HlComboboxOptionDirective<T>;
     if (this.options.length - 1 == currentActive) nextItem = this.options[0];
@@ -82,7 +89,7 @@ export class HlComboboxDirective<T> implements OnChanges {
   }
 
   setPrevItemActive() {
-    const currentActive = this.options.findIndex(o => o.isActive);
+    const currentActive = this.options.findIndex((o) => o.isActive);
 
     let nextItem: HlComboboxOptionDirective<T>;
     if (currentActive == 0) nextItem = this.options[this.options.length - 1];
@@ -95,7 +102,7 @@ export class HlComboboxDirective<T> implements OnChanges {
     this.expand();
     if (!directive) return;
 
-    this.options.forEach(o => (o.isActive = false));
+    this.options.forEach((o) => (o.isActive = false));
 
     directive.isActive = true;
     this.activeChange.emit(directive.option);
