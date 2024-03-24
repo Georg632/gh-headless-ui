@@ -1,15 +1,10 @@
 import {
   Directive,
-  ElementRef,
   EmbeddedViewRef,
-  HostBinding,
-  HostListener,
   Input,
-  OnChanges,
   OnDestroy,
   OnInit,
   Renderer2,
-  SimpleChanges,
   TemplateRef,
   ViewContainerRef,
 } from '@angular/core';
@@ -17,6 +12,7 @@ import { HlComboboxDirective } from './hl-combobox.directive';
 
 @Directive({
   selector: '[hlComboboxOption]',
+  standalone: true,
 })
 export class HlComboboxOptionDirective<T> implements OnInit, OnDestroy {
   element!: HTMLElement;

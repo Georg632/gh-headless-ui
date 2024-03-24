@@ -12,6 +12,7 @@ import { HlComboboxOverlayDirective } from './hl-combobox-overlay.directive';
 
 @Directive({
   selector: '[hlCombobox]',
+  standalone: true,
 })
 export class HlComboboxDirective<T> implements OnChanges {
   overlay!: HlComboboxOverlayDirective<T>;

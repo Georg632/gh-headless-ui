@@ -3,6 +3,7 @@ import { HlComboboxDirective } from './hl-combobox.directive';
 
 @Directive({
   selector: '[hlComboboxInput]',
+  standalone: true,
 })
 export class HlComboboxInputDirective<T> {
   @HostListener('keyup', ['$event']) change(event: KeyboardEvent) {

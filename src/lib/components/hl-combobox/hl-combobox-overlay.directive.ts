@@ -3,6 +3,7 @@ import { HlComboboxDirective } from './hl-combobox.directive';
 
 @Directive({
   selector: '[hlComboboxOverlay]',
+  standalone: true,
 })
 export class HlComboboxOverlayDirective<T> {
   constructor(
