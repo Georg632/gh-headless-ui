@@ -12,8 +12,8 @@ import { HlComboboxOverlayDirective } from '../../components/hl-combobox/hl-comb
     HlComboboxDirective,
     HlComboboxInputDirective,
     HlComboboxOptionDirective,
-    HlComboboxOverlayDirective
-  ]
+    HlComboboxOverlayDirective,
+  ],
 })
 export class HlComboboxComponent {
   options: { id: number; label: string }[] = [
